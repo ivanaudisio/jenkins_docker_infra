@@ -1,0 +1,60 @@
+version: '2'
+services:
+  cjoc:
+    container_name: jeninfra_cjoc
+    build: jenkins_cjoc
+    hostname: cjoc
+    #environment:
+    #  - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    ports:
+     - "8888:8080"
+     - "5000:5000"
+
+  jenkins:
+    container_name: jeninfra_master01
+    build: jenkins_master
+    hostname: master
+    #image: cloudbees/jenkins-enterprise:1.651.21.1
+    ports:
+     - "8080:8080"
+    links:
+     - cjoc:cjoc
+
+  node:
+   container_name: jeninfra_slave01
+   build: jenkins_slave
+   hostname: slave
+   #image: jenkins_slave
+   links:
+     - cjoc:cjoc
+     - jenkins:jenkins
+
+  mechanize:
+   container_name: jeninfra_mechanize
+   build: jenkins_mechanize
+   hostname: mechanize
+   depends_on:
+     - jenkins
+     - cjoc
+   #image: jenkins_slave
+   links:
+     - cjoc:cjoc
+     - jenkins:jenkins
+
+
+# docker-compose up -d --build
+
+  # node:
+  #   build: jenkins_slave
+  #   links:
+  #     - jenkins:jenkins
+  #     - opcenter:opcenter
+
+  # activate licences
+  # set URL and save (master/cjoc)
+  # set executors to 0 in masters
+# connect master to CJOC https://github.com/cloudbees/jenkins-scripts/edit/master/addClientMasterPlus.groovy
+# fix local redirection
+# pass slave.jar to slave
+# create shared-slave https://github.com/cloudbees/jenkins-scripts/blob/master/create-shared-agent.groovy
+# link slave to master (nohup &)

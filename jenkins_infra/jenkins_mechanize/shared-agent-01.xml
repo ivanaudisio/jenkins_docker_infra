@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.cloudbees.opscenter.server.model.SharedSlave plugin="operations-center-server@1.8.100">
+  <actions/>
+  <description></description>
+  <uid>86c04030-2632-40a0-85f4-c404cfe80c19</uid>
+  <disabled>false</disabled>
+  <properties class="com.cloudbees.opscenter.server.model.SharedSlave$PropertyList"/>
+  <remoteFS>/shared-agent</remoteFS>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <labelString>shared slave 01</labelString>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="com.cloudbees.opscenter.server.jnlp.slave.JocJnlpSlaveLauncher" plugin="operations-center-jnlp-controller@1.8.100"/>
+</com.cloudbees.opscenter.server.model.SharedSlave>
