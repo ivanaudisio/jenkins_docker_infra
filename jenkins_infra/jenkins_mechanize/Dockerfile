@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 COPY ./attach.master.groovy /home/
 COPY ./configure.jenkins.infra.py /home/
-COPY ./shared-agent.xml /home/
+COPY ./shared-agent-01.xml /home/
 
 # Default command
 CMD ["python", "/home/configure.jenkins.infra.py"]
