@@ -1,11 +1,11 @@
-# This Dockerfile is used to build an image containing basic stuff to be used as a Jenkins slave build node.
 FROM ubuntu
 MAINTAINER Ivan Audisio
 
-RUN apt-get update && \
-    apt-get install python-mechanize -y && \
-    apt-get install default-jdk -y && \
-    apt-get install wget -y
+RUN apt-get -q update &&\
+    apt-get install default-jdk -y &&\
+    apt-get install wget -y &&\
+    apt-get install python-mechanize -y &&\
+    apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
 COPY ./attach.master.groovy /home/
 COPY ./configure.jenkins.infra.py /home/
