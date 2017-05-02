@@ -21,9 +21,7 @@ services:
      - cjoc:cjoc
 
   node:
-   container_name: jeninfra_slave01
    build: jenkins_slave
-   hostname: slave
    #image: jenkins_slave
    links:
      - cjoc:cjoc

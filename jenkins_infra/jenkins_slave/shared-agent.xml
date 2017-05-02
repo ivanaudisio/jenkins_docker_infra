@@ -2,13 +2,13 @@
 <com.cloudbees.opscenter.server.model.SharedSlave plugin="operations-center-server@1.8.100">
   <actions/>
   <description></description>
-  <uid>99f89470-ca0e-4e15-b549-70df0e295b60</uid>
+  <uid>shared-agent-id</uid>
   <disabled>false</disabled>
   <properties class="com.cloudbees.opscenter.server.model.SharedSlave$PropertyList"/>
   <remoteFS>/shared-agent</remoteFS>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
-  <labelString>shared slave 02</labelString>
+  <labelString>shared-agent-labels</labelString>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
   <launcher class="com.cloudbees.opscenter.server.jnlp.slave.JocJnlpSlaveLauncher" plugin="operations-center-jnlp-controller@1.8.100"/>
 </com.cloudbees.opscenter.server.model.SharedSlave>

@@ -8,5 +8,6 @@ RUN apt-get -q update &&\
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
 COPY ./agent.py /home/jenkins/
+COPY ./shared-agent.xml /home/jenkins/
 
 CMD ["python", "/home/jenkins/agent.py"]

@@ -49,6 +49,3 @@ activate_cb_instance(url)
 os.system('wget http://cjoc:8080/jnlpJars/jenkins-cli.jar')
 # Attach master to operation center
 os.system('java -jar jenkins-cli.jar -s http://cjoc:8080/ groovy /home/attach.master.groovy')
-# Create shared agent under operation center
-os.system('java -jar jenkins-cli.jar -s http://cjoc:8080/ create-job shared-agent-01 < /home/shared-agent-01.xml')
-#os.system('java -jar jenkins-cli.jar -s http://cjoc:8080/ create-job shared-agent-02 < /home/shared-agent-02.xml')
