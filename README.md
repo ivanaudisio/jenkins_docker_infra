@@ -6,6 +6,6 @@ docker-compose scale node=XXX
 
 # URL from browser
 
-CJOC: localhost:8888 (edited)
+CJOC: localhost:8888
  
 MASTER: localhost: 8080
